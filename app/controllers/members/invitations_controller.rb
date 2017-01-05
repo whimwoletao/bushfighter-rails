@@ -1,4 +1,3 @@
-
 class Members::InvitationsController < Devise::InvitationsController
   layout 'signin'
    skip_filter :require_no_authentication, :only => :edit
