@@ -1,4 +1,4 @@
-class Jointmemberteam < ActiveRecord::Base
+class JointMemberTeam < ActiveRecord::Base
   belongs_to :member
   belongs_to :team
 end
