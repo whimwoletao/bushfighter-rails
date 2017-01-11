@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "dashboard/account", to: "members#account", as: 'member_account'
   get 'landings/index'
 
-  
+
   resources :teams do
     #on: :member is for specific member
     # post "add_member", to: "teams#add_member"
@@ -19,12 +19,14 @@ Rails.application.routes.draw do
 
   end
 
-    # devise_for :members
+  # devise_for :members
   # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
 
    # this is assigning device controllers for member(s)
   # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
   devise_for :members
+  # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:registrations]
+
 
   resources :games do
     resources :reviews
@@ -83,17 +85,16 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  #   devise_scope :member do
-  #   get    "login"   => "members/sessions#new",         as: :new_member_session
-  #   post   "login"   => "members/sessions#create",      as: :member_session
-  #   delete "signout" => "members/sessions#destroy",     as: :destroy_member_session
-  #   # put    "update_notification"  => "members#update_notification"
+    # devise_scope :member do
+    # get    "login"   => "members/sessions#new",         as: :new_member_session
+    # post   "login"   => "members/sessions#create",      as: :member_session
+    # delete "signout" => "members/sessions#destroy",     as: :destroy_member_session
+    # put    "update_notification"  => "members#update_notification"
 
-  #   get    "signup"  => "members/registrations#new",    as: :new_member_registration
-  #   post   "signup"  => "members/registrations#create", as: :member_registration
-  #   put    "signup"  => "members/registrations#update", as: :update_member_registration
-  #   get    "account" => "members/registrations#edit",   as: :edit_member_registration
+    # get    "signup"  => "members/registrations#new",    as: :new_member_registration
+    # post   "signup"  => "members/registrations#create", as: :member_registration
+    # put    "signup"  => "members/registrations#update", as: :update_member_registration
+    # get    "account" => "members/registrations#edit",   as: :edit_member_registration
   # end
 
-  
 end
