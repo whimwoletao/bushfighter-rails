@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tally.name %>
+</p>
+
+<p>
+  <strong>Head:</strong>
+  <%= @tally.head %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @tally.body %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @tally.total %>
+</p>
+
+<p>
+  <strong>Kills:</strong>
+  <%= @tally.kills %>
+</p>
+
+<%= link_to 'Edit', edit_tally_path(@tally) %> |
+<%= link_to 'Back', tallies_path %>

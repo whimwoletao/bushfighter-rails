@@ -1,0 +1,138 @@
+
+<div class="wrapper">
+
+   <%= render 'teams/sidebar' %>
+  
+    <div class="main-panel expand">
+        <!-- TODO Add Footer Partial -->
+        <%= render partial: "members/navbar" %>
+
+
+<div class="image-container set-full-height" >
+
+  <br><br>
+
+    
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+
+
+
+<h3>Tally Board</h3>
+
+<div class="col-lg-12 col-md-12">
+                        <div class="card box-shape">
+                          <div class="header">
+                            <%= link_to 'Add record', new_group_tally_path, class: "btn float-right box-shape" %>
+                             <h5><%= @group.name.capitalize %></h5>
+                          </div>
+
+                    <div class="content">
+
+                            <% if !flash[:notice].blank? %>
+                              <div class="alert alert-info">
+                              <%= flash[:notice] %>
+                              </div>
+                            <% end %>
+                           <!--  <center>
+                              <strong><h3><%= @group.name %></h3></strong>
+                            </center> -->
+                      <div>
+                        <table  class="table table-bordered table-striped">
+                            <tbody>
+                                <tr>
+                                  <th>Name</th>
+                                  <th>Head</th>
+                                  <th>Body</th>
+                                  <th>Total</th>
+                                  <th>Kills</th>
+
+                                  <th colspan="2"></th>
+                                </tr>
+                                <% @tallies.each do |tally| %>
+                                  <tr>
+                                    <td><%= tally.name %></td>
+                                    <td><%= tally.head %></td>
+                                    <td><%= tally.body %></td>
+                                    <td><%= tally.total %></td>
+                                    <td><%= tally.kills %></td>
+                                    <td><%= link_to 'Modify', edit_group_tally_path(id: tally.id) %></td>
+                                    <td><%= link_to 'Delete', group_tally_path(id: tally.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                        </table>
+                      </div>
+
+                      </div>
+                      </div>
+
+<br>
+
+
+
+
+            </div>
+        </div><!-- end row -->
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
