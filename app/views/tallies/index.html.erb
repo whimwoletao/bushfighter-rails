@@ -24,7 +24,7 @@
 <div class="col-lg-12 col-md-12">
                         <div class="card box-shape">
                           <div class="header">
-                            <%= link_to 'Add record', new_group_tally_path, class: "btn float-right box-shape" %>
+                            <%= link_to 'Add record', new_group_tally_path(group_id:@group.id), class: "btn float-right box-shape" %>
 
                           </div>
 
@@ -43,8 +43,8 @@
                             <tbody>
                                 <tr>
                                   <th>Name</th>
-                                  <th>Head</th>
-                                  <th>Body</th>
+                                  <th>Head Shots</th>
+                                  <th>Body Shots</th>
                                   <th>Total</th>
                                   <th>Kills</th>
 
@@ -55,8 +55,9 @@
                                     <td><%= tally.name %></td>
                                     <td><%= tally.head %></td>
                                     <td><%= tally.body %></td>
-                                    <td><%= tally.total %></td>
+                                    <td><%= tally.head + tally.body %></td>
                                     <td><%= tally.kills %></td>
+                                    <!-- <td> <% if tally.id == @boss.id %> <%= "Winner"%> <%end%> </td> -->
                                     <td><%= link_to 'Modify', edit_group_tally_path(id: tally.id) %></td>
                                     <td><%= link_to 'Delete', group_tally_path(id: tally.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                                   </tr>

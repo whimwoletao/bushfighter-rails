@@ -6,6 +6,7 @@ class TalliesController < ApplicationController
   # GET /tallies.json
   def index
     @tallies = Tally.all
+    @boss = Tally.order("total DESC").first
   end
 
   # GET /tallies/1
@@ -27,6 +28,7 @@ class TalliesController < ApplicationController
   def create
     @tally = Tally.new(tally_params)
     @tally.group_id = @group.id
+    params[:total] = params[:body]
 
     respond_to do |format|
       if @tally.save
