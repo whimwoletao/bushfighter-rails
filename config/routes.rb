@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :groups
   # get 'members/dashboard'
 
   #get "the method name" to: "url path" as: "modify urlpath"
