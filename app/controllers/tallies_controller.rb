@@ -75,7 +75,7 @@ class TalliesController < ApplicationController
     end
     #  check if the company has permission to access the group
    def set_group
-     @group = Group.find(params[:id] || params[:group_id])
+     @group = Group.last
     # $grou = @group.id
     # check if company has permission to view the group
     # if !(@group.company_id == @company.id)

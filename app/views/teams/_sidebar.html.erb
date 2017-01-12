@@ -9,18 +9,21 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="#">
                         <i class="ti-user"></i>
                         <p>My Profile</p>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="user.html">
-                        <i class="ti-panel"></i>
-                        <p>Create Game Post</p>
-                    </a>
-                </li>
                 <li>
+
+                    <%= link_to group_tallies_path(group_id:1) do %>
+                       <i class="ti-panel"></i>
+                        <p>Tally Board</p>
+                    <% end %>
+
+                    
+                </li>
+               <!--  <li>
                     <a href="table.html">
                         <i class="ti-view-list-alt"></i>
                         <p>Create Team</p>

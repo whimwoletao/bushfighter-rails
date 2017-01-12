@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :tallies
+  # resources :tallies
   # resources :groups
   # get 'members/dashboard'
    resources :groups do
