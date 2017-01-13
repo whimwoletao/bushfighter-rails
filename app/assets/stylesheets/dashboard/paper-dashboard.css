@@ -2698,7 +2698,8 @@ textarea.form-control {
   }
 
   body > .navbar-collapse.collapse {
-    display: none !important;
+    display: !important;
+    /*display: block;*/
   }
 
   .card form [class*="col-"] {
@@ -2763,7 +2764,8 @@ textarea.form-control {
   .navbar .navbar-collapse.collapse,
   .navbar .navbar-collapse.collapse.in,
   .navbar .navbar-collapse.collapsing {
-    display: none !important;
+    display:  !important;
+   /*display: block;*/
   }
 
   .navbar-nav > li {
@@ -2913,7 +2915,7 @@ textarea.form-control {
   }
 
   .navbar-toggle .icon-bar {
-    display: block;
+    /*display: block;*/
     position: relative;
     background: #fff;
     width: 24px;
