@@ -44,11 +44,11 @@ transparent = true;
             // Code for the Validator
             var $validator = $('.wizard-card form').validate({
         		  rules: {
-        		    firstname: {
+        		    name: {
         		      required: true,
         		      minlength: 3
         		    },
-        		    lastname: {
+        		    alias: {
         		      required: true,
         		      minlength: 3
         		    },
@@ -57,6 +57,13 @@ transparent = true;
         		    }
                 },
         	});
+
+            $.validator.addMethod("cRequired", $.validator.methods.required,
+            "This field is required, remove it if you are not adding collaborator");
+            $.validator.addClassRules("collaborator", {
+              cRequired: true,
+              minlength: 2,
+            });
 
             // Wizard Initialization
           	$('.wizard-card').bootstrapWizard({
