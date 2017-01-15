@@ -82,6 +82,8 @@ group :development do
   gem 'spring'
 end
 
+# for creating environmental viarible
+gem 'figaro'
 
 # creating fog file to help with aws configuration 
 gem 'fog'
