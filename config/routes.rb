@@ -8,7 +8,7 @@ Rails.application.routes.draw do
        resources :tallies do
           # post 'import', on: :collection
       end
-    end
+   end
 
   #get "the method name" to: "url path" as: "modify urlpath"
   ##get "url pattern" to: "controller#action" as: "prefix"
