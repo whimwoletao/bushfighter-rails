@@ -1,11 +1,14 @@
 <%if !member_signed_in?%>
 <%end%>
- <%= render partial: "sidebar" %>
+ <%= render partial: "teams/sidebar" %>
 <div class="main-panel expand">
- <%= render partial: "navbar" %>
+ <%= render partial: "members/navbar" %>
 <div class="row">
 <% @games.each do |game|%>
 <div class=".col-sm-6 col-md-3">
+<div class="title">
+<%=game.title%>
+</div>
   <div class="thumbnail">
 <%= link_to (image_tag game.image.url(:medium), class: 'image'), game%>
   </div>

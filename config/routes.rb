@@ -27,13 +27,13 @@ Rails.application.routes.draw do
 
   end
 
-  # devise_for :members
+  devise_for :members
   # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
 
    # this is assigning device controllers for member(s)
   # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
 
-  devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
+  # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
 
 
   resources :games do
@@ -96,7 +96,7 @@ Rails.application.routes.draw do
     devise_scope :member do
       # get    "login"   => "members/sessions#new",         as: :new_member_session
       # post   "login"   => "members/sessions#create",      as: :member_session
-      delete "signout" => "members/sessions#destroy",     as: :destroy_member_session
+      # delete "signout" => "members/sessions#destroy",     as: :destroy_member_session
       # put    "update_notification"  => "members#update_notification"
 
       # get    "signup"  => "members/registrations#new",    as: :new_member_registration

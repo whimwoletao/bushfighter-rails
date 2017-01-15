@@ -1,5 +1,5 @@
 <div class="sidebar" data-background-color="white" data-active-color="danger">
-      
+
       <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
@@ -9,19 +9,45 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="#">
-                        <i class="ti-user"></i>
-                        <p>My Profile</p>
-                    </a>
+                       <%= link_to member_dashboard_path do %>
+                        <i class="ti-list"></i>
+                        <p>Dashboard</p>
+                        <%end%>
                 </li>
-                <li>
+                <li class="">
+                 <%=link_to new_team_path do %>
+                        <i class="ti-user"></i>
+                        <p>Create Team</p>
+                  <%end%>
+                </li>
+                <li class="">
+                     <%= link_to new_game_path  do%>
+                        <i class="ti-rss"></i>
+                        <p>Create Game Post</p>
+                        <%end%>
+                    
+                </li>
 
+                <li class="">
+                      <%=link_to games_path do %>
+                        <i class="ti-game"></i>
+                        <p>All Game</p>
+                        <%end%>
+                </li>
+                 <!-- <li>
+                    <%= link_to group_tallies_path(group_id:1) do %>
+                       <i class="ti-panel"></i>
+                        <p>My Teams</p>
+                    <% end %>
+
+                </li> -->
+                
+                <li>
                     <%= link_to group_tallies_path(group_id:1) do %>
                        <i class="ti-panel"></i>
                         <p>Tally Board</p>
                     <% end %>
 
-                    
                 </li>
                <!--  <li>
                     <a href="table.html">

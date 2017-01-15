@@ -1,14 +1,15 @@
-<%= render partial: "navbar" %>
-<div class="wrapper">
-<div class="main-panel expand">
 
+<div class="wrapper">
+<%= render 'teams/sidebar' %>
+<div class="main-panel expand">
+<%= render partial: "members/navbar" %>
 <div class="content">
 <div class="container-fluid">
-<div class="row">
+<!-- <div class="row">
 	<div class="col-sm-6">Teams</div>
 	<div class="col-sm-6">Games</div>
 </div>
-<div class="row">
+ --><div class="row">
 
                         <div class="header col-md-4 col-md-offset-2">
                                 <h4 class="title">Teams (<%= @member.teams.length %>)</h4>
@@ -91,7 +92,7 @@
                                                         </div>
                                                     </div>
                                                 <% elsif %>
-                                                    
+
                                                 <% end %>
 
                                             </div>
@@ -116,7 +117,7 @@
                             </div>
                           </div>
                         <% end %>
-            	
+
                     </div>
 
 
