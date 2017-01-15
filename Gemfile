@@ -42,6 +42,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #needed for devise
 gem 'devise', '~> 4.2'
+
+# If you want users to be registered through an invitation carried out by a site administrator,
+#  or by a group leader. 
+# (As an alternative to end-users explicitly registering themselves on provided web form
+gem 'devise_invitable'
+
 # friendly id, will be used to search instead of id
 gem 'friendly_id', '~> 5.2'
 #needed for search
