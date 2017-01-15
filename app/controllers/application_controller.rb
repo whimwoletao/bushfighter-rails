@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   	  elsif (type == 2)
   	  	# company invitation
   	  	sender = Member.find(sender_id)
-  	  	message = sender.name + ' (' + sender.email + ') ' + 'added you to ' + team_name
+  	  	message =  ' (' + sender.email + ') ' + 'added you to ' + team_name
 
   	  elsif(type == 3)
   	  	# message from another user to company 
@@ -24,13 +24,13 @@ class ApplicationController < ActionController::Base
         if (member_id == sender_id)
           message = 'You' + ' (' + sender.email + ') ' + 'left ' + team_name
         else
-          message = sender.name + ' (' + sender.email + ') ' + 'removed you from ' + team_name
+          message = ' (' + sender.email + ') ' + 'removed you from ' + team_name
         end
 
       elsif (type == 5)
       # Transer Ownership to you
       sender = Member.find(sender_id)
-      message = sender.name + ' (' + sender.email + ') ' + 'transfer Ownership of ' + team_name + ' to you '
+      message = ' (' + sender.email + ') ' + 'transfer Ownership of ' + team_name + ' to you '
   	  end
 
   	  notification =  Notification.new(read: 0, type_notification: type, message: message , member_id: member_id )
