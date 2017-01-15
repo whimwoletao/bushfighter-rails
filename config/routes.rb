@@ -33,7 +33,7 @@ Rails.application.routes.draw do
    # this is assigning device controllers for member(s)
   # devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
 
-  # devise_for :members, controllers: { registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
+  devise_for :members, controllers: {invitations: 'members/invitations', registrations: "members/registrations", sessions: "members/sessions", passwords: "members/passwords"}, skip: [:sessions, :registrations]
 
 
   resources :games do
