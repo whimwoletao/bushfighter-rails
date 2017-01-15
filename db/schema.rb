@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112082524) do
+ActiveRecord::Schema.define(version: 20170115121741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,10 @@ ActiveRecord::Schema.define(version: 20170112082524) do
     t.string   "alias"
     t.string   "city"
     t.string   "country"
+    t.string   "slug"
   end
+
+  add_index "teams", ["slug"], name: "index_teams_on_slug", unique: true, using: :btree
 
   add_foreign_key "joint_member_teams", "members"
   add_foreign_key "joint_member_teams", "teams"
