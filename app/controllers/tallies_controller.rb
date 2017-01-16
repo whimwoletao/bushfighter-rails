@@ -46,7 +46,7 @@ class TalliesController < ApplicationController
   def update
     respond_to do |format|
       if @tally.update(tally_params)
-        format.html { redirect_to group_tallies_path, notice: 'Tally was successfully updated.' }
+        format.html { redirect_to group_tallies_path(group_id:@group.id), notice: 'Tally was successfully updated.' }
         format.json { render :show, status: :ok, location: @tally }
       else
         format.html { render :edit }
