@@ -19,10 +19,7 @@ class GamesController < ApplicationController
     else
       @avg_review = @reviews.average(:rating)
     end
-     @reviews.each do |me|
-    you = Member.find_by(id:me.member_id)
-    @them  = you.email
-  end
+  
 
   end
 
