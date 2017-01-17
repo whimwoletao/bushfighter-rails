@@ -9,6 +9,27 @@
 <div class="col-md-12">
 
 <h1 class="review_title"><%= @game.title%></h1>
+<div class="table-responsive">
+<table class="table">
+	<tbody>
+	<tr>
+	<p><strong>Title:</strong>
+	
+	<%= @game.title %></p>
+	
+	</tr>
+	<tr>
+	<p><strong>Description:</strong>
+	
+	<%=  @game.description  %>
+	
+	</p></tr>
+	</tbody>
+</table>
+
+
+</div>
+
 
 <% if @reviews.blank?%>
 <h3> No Review, would you like to add one?</h3>
@@ -17,34 +38,36 @@
 <%@reviews.each do |rev|%>
 <div class="reviews">
 	<div class="star-rating" data-score=<%=rev.rating%> > </div>
-	<p><%=Member.find(rev.member_id).email%> : <%=rev.comment%></p>
+	
 
 <div class="star-rating" data-score= <%=@avg_review%> ></div>
-<em> <%= "#{@reviews.length} Comments"%></em>
+
 <div class="table-responsive">
 <table class="table">
 	<tbody>
 	<tr>
-	<td><strong>Title:</strong>
+	<td><strong>Member:</strong>
 	</td>
-	<td><%= @game.title %>
+	<td><%=Member.find(rev.member_id).email%>
 	</td>
 	</tr>
 	<tr>
-	<td><strong>Description:</strong>
+	<td><strong>Comment:</strong>
 	</td>
-	<td><%=  @game.description  %>
+	<td> <%=rev.comment%>
 	</td>
 	</tr>
 	</tbody>
 </table>
+<%end%>
+<em> <%= "#{@reviews.length} Comments"%></em>
 <%= link_to "Comment on post", new_game_review_path(game_id:@game.id), class: "btn  btn-info"  %>
 
 </div>
 </div>
 
 
-<%end%>
+
 <%end%>
 </div>
 </div>
