@@ -3,8 +3,9 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_up_game, except: [:destroy]
   before_action  :authenticate_member!
+  before_action :set_member
 
-  
+
 
   # GET /reviews/new
   def new
@@ -14,6 +15,13 @@ class ReviewsController < ApplicationController
   # GET /reviews/1/edit
   def edit
   end
+
+  def show
+    me = @review
+    you = Member.find_by(id:me.member_id)
+    @them  = you.email
+  end
+
 
   # POST /reviews
   # POST /reviews.json
@@ -65,6 +73,10 @@ class ReviewsController < ApplicationController
 
     def set_up_game
       @game = Game.friendly.find(params[:id]||params[:game_id])
+    end
+
+    def set_member
+      @member = current_member
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

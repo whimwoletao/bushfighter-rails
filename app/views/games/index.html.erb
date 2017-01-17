@@ -6,11 +6,12 @@
 <div class="row">
 <% @games.each do |game|%>
 <div class=".col-sm-6 col-md-3">
-<div class="title">
-<%=game.title%>
-</div>
+
   <div class="thumbnail">
-<%= link_to (image_tag game.image.url(:medium), class: 'image'), game%>
+  <%= link_to game_path(id:game.id) do %>
+  <b><%=game.title%></b>
+  <%end%>
+
   </div>
 </div>
 <%end%>

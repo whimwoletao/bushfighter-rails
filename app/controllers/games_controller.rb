@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :set_member
   before_action :authenticate_member!, except: [:index, :show ]
+  # before_action :set_review
 
 
 
@@ -18,6 +19,11 @@ class GamesController < ApplicationController
     else
       @avg_review = @reviews.average(:rating)
     end
+     @reviews.each do |me|
+    you = Member.find_by(id:me.member_id)
+    @them  = you.email
+  end
+
   end
 
 
@@ -83,4 +89,9 @@ class GamesController < ApplicationController
     def set_member
         @member = current_member
     end
+
+    # def set_review
+    #   @review = Review.find(params[:id] || params[:review_id])
+    # end
+
 end

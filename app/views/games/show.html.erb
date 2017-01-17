@@ -6,8 +6,19 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <div class="row">
-<div class="col-md-4">
-<%= image_tag @game.image.url(:medium) %>
+<div class="col-md-12">
+
+<h1 class="review_title"><%= @game.title%></h1>
+
+<% if @reviews.blank?%>
+<h3> No Review, would you like to add one?</h3>
+<%= link_to "Comment", new_game_review_path(game_id:@game.id), class: "btn btn-info"   %>
+<%else%>
+<%@reviews.each do |rev|%>
+<div class="reviews">
+	<div class="star-rating" data-score=<%=rev.rating%> > </div>
+	<p><%=@them%> : <%=rev.comment%></p>
+
 <div class="star-rating" data-score= <%=@avg_review%> ></div>
 <em> <%= "#{@reviews.length} reviews"%></em>
 <div class="table-responsive">
@@ -27,22 +38,11 @@
 	</tr>
 	</tbody>
 </table>
-<%= link_to "Review Game", new_game_review_path(game_id:@game.id), class: "btn  btn-info"  %>
+<%= link_to "Comment on post", new_game_review_path(game_id:@game.id), class: "btn  btn-info"  %>
 
 </div>
 </div>
-<div class="col-md-7 col-md-offset-1">
-<h1 class="review_title"><%= @game.title%></h1>
 
-<% if @reviews.blank?%>
-<h3> No Review, would you like to add one?</h3>
-<%= link_to "Comment", new_game_review_path(game_id:@game.id), class: "btn btn-info"   %>
-<%else%>
-<%@reviews.each do |rev|%>
-<div class="reviews">
-	<div class="star-rating" data-score=<%=rev.rating%> > </div>
-	<p><%=rev.comment%></p>
-</div>
 
 <%end%>
 <%end%>
