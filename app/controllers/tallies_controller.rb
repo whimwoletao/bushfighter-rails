@@ -63,6 +63,7 @@ class TalliesController < ApplicationController
       format.html { redirect_to group_tallies_url, notice: 'Tally was successfully destroyed.' }
       format.json { head :no_content }
     end
+    render 'index'
   end
 
   private
