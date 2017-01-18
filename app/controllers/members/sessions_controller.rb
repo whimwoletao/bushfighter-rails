@@ -3,9 +3,9 @@ class Members::SessionsController < Devise::SessionsController
 layout 'signin'
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+   # def new
+   #   super
+   # end
 
   # POST /resource/sign_in
   # def create
@@ -26,7 +26,7 @@ layout 'signin'
 
   def after_sign_in_path_for(resource)
       # member_dashboard_path
-      redirect_to  new_team_path
+     member_dashboard_path
   end
 
 end
