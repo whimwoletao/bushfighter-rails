@@ -113,7 +113,7 @@ Devise.setup do |config|
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = Rails.env.test? ? :get :  :match "signout" => "members/sessions#destroy",     as: :destroy_member_session
+  # config.sign_out_via = Rails.env.test? ? :get :  :match "signout" => "members/sessions#destroy"
    # match 'sign_out' => "members/sessions#destroy"
 
   # ==> Configuration for :invitable
