@@ -95,7 +95,8 @@ Rails.application.routes.draw do
     devise_scope :member do
       get    "login"   => "members/sessions#new",         as: :new_member_session
       post   "login"   => "members/sessions#create",      as: :member_session
-      delete "signout" => "members/sessions#destroy",     as: :destroy_member_session
+      # delete "signout" => "members/sessions#destroy",     as: :destroy_member_session
+      get "/signout",  to: "members/sessions#destroy",     as: :destroy_member_session
       put    "update_notification"  => "members#update_notification"
 
       get    "signup"  => "members/registrations#new",    as: :new_member_registration
