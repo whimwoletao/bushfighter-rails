@@ -1,3 +1,4 @@
+ 
 jQuery(function($) {'use strict';
 
 	// Navigation Scroll
@@ -5,10 +6,23 @@ jQuery(function($) {'use strict';
 		Scroll();
 	});
 
-	$('.navbar-collapse ul li a').on('click', function() {  
+
+	$('#aboutusb').on('click',function(){
+		$('#aboutus').modal();
+		return false;
+	});
+	$('#membershipb').on('click',function(){
+		$('#membership').modal();
+		return false;
+	});
+
+
+	$('.navbar-collapse ul li a').on('click', function() {
 		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
 		return false;
 	});
+
+
 
 	// User define function
 	function Scroll() {
@@ -231,3 +245,32 @@ jQuery(function($) {'use strict';
 	// google.maps.event.addDomListener(window, 'load', initialize_map);
 
 });
+ function openRegistrationModal(){
+ 		$("#loginModal").modal('show');
+ }
+
+ function submitAjax(){
+
+ 	var detailForm = $("#request-demo");
+    $.ajax({
+    	url : '/membership',
+    	type: 'POST',
+    	data: detailForm.serialize(),
+    	success: function (data){
+    		if (data=="true"){
+    			alert("Membership details Submitted");
+    		}
+    		else if (data=="false"){
+    			alert("Registration failed");
+    		}
+    	},
+    	error : function(jqXHR, textStatus, errorThrown) {
+             //shakeModal(false, "Couldn't complete your request, kindly try again");
+             alert("Couldn't complete your request, kindly try again");
+           }
+
+    });
+
+ 	//alert("Your membership details received, we will get back when we confirm your payment");
+
+ }

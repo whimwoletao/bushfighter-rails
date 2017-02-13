@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115134757) do
+ActiveRecord::Schema.define(version: 20170210204207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_us", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -77,6 +86,16 @@ ActiveRecord::Schema.define(version: 20170115134757) do
   add_index "members", ["invited_by_id"], name: "index_members_on_invited_by_id", using: :btree
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
 
+  create_table "memberships", force: :cascade do |t|
+    t.string   "group"
+    t.string   "name"
+    t.string   "email"
+    t.string   "number"
+    t.string   "accept"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.string   "message"
     t.integer  "read"
@@ -120,6 +139,7 @@ ActiveRecord::Schema.define(version: 20170115134757) do
     t.string   "city"
     t.string   "country"
     t.string   "slug"
+    t.integer  "status"
   end
 
   add_index "teams", ["slug"], name: "index_teams_on_slug", unique: true, using: :btree
