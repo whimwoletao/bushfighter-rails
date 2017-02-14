@@ -277,11 +277,11 @@ jQuery(function($) {'use strict';
 
  function contactAjax(){
 
- 	var detailForm = $("#send-contact");
+ 	var detailForms = $("#send-contact");
     $.ajax({
     	url : '/contactus',
     	type: 'POST',
-    	data: detailForm.serialize(),
+    	data: detailForms.serialize(),
     	success: function (data){
     		if (data=="true"){
     			alert("Thank you! We Have Received your message!");

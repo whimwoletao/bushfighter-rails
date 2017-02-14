@@ -914,7 +914,8 @@ Would you like to join a group of paintball enthusiasts and friends who share th
                               <abbr title="Phone">P:</abbr> (234)803 837 874
                             </address>
 
-                            <form id="main-contact-form" name="contact-form" method="post" action="#">
+                           
+                            <form  data-remote="true" id="send-contact">
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control" placeholder="Name" required>
                                 </div>
@@ -927,7 +928,7 @@ Would you like to join a group of paintball enthusiasts and friends who share th
                                 <div class="form-group">
                                     <textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                <button  onclick="contactAjax()" type="submit" class="btn btn-primary">Send Message</button>
                             </form>
                         </div>
                     </div>
