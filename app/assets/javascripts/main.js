@@ -274,3 +274,29 @@ jQuery(function($) {'use strict';
  	//alert("Your membership details received, we will get back when we confirm your payment");
 
  }
+
+ function contactAjax(){
+
+ 	var detailForm = $("#send-contact");
+    $.ajax({
+    	url : '/contactus',
+    	type: 'POST',
+    	data: detailForm.serialize(),
+    	success: function (data){
+    		if (data=="true"){
+    			alert("Thank you! We Have Received your message!");
+    		}
+    		else if (data=="false"){
+    			alert("Message failed");
+    		}
+    	},
+    	error : function(jqXHR, textStatus, errorThrown) {
+             //shakeModal(false, "Couldn't complete your request, kindly try again");
+             alert("Couldn't complete your request, kindly try again");
+           }
+
+    });
+
+ 	//alert("Your membership details received, we will get back when we confirm your payment");
+
+ }

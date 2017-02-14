@@ -24,8 +24,9 @@
 <div class="col-lg-12 col-md-12">
                         <div class="card box-shape">
                           <div class="header">
+                          <% if current_member.present? && current_member.email == 'admin@bushfighterspaintballclub.com' %>
                             <%= link_to 'Add record', new_group_tally_path(group_id:@group.id), class: "btn float-right box-shape" %>
-
+                            <%end%>
                           </div>
 
                     <div class="content">
@@ -47,8 +48,9 @@
                                   <th>Body Shots</th>
                                   <th>Total</th>
                                   <th>Kills</th>
-
+<% if current_member.present? && current_member.email == 'admin@bushfighterspaintballclub.com' %>
                                   <th colspan="2"></th>
+                                  <%end%>
                                 </tr>
                                 <% @tallies.each do |tally| %>
                                   <tr>
@@ -57,9 +59,10 @@
                                     <td><%= tally.body %></td>
                                      <td><%= tally.total%></td> 
                                     <td><%= tally.kills %></td>
-
+<% if current_member.present? && current_member.email == 'admin@bushfighterspaintballclub.com' %>
                                     <td><%= link_to 'Modify', edit_group_tally_path(id: tally.id) %></td>
                                     <td><%= link_to 'Delete', group_tally_path(id: tally.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                    <%end%>
                                   </tr>
                                 <% end %>
                               </tbody>
