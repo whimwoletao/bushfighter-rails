@@ -277,14 +277,14 @@ jQuery(function($) {'use strict';
 
  function contactAjax(){
 
- 	var detailForms = $("#send-contact");
+ 	var details = $("#send-contact");
     $.ajax({
     	url : '/contactus',
     	type: 'POST',
-    	data: detailForms.serialize(),
+    	data: details.serialize(),
     	success: function (data){
     		if (data=="true"){
-    			alert("Thank you! We Have Received your message!");
+    			alert("Thank you for contacting! We Have Received your message!");
     		}
     		else if (data=="false"){
     			alert("Message failed");
@@ -300,3 +300,30 @@ jQuery(function($) {'use strict';
  	//alert("Your membership details received, we will get back when we confirm your payment");
 
  }
+function reserveAjax(){
+
+ 	var detail = $("#reserveModal");
+    $.ajax({
+    	url : '/reserve',
+    	type: 'POST',
+    	data: detail.serialize(),
+    	success: function (data){
+    		if (data=="true"){
+    			alert("Game Successfully reserved");
+    		}
+    		else if (data=="false"){
+    			alert("Reservation failed, Please try again");
+    		}
+    	},
+    	error : function(jqXHR, textStatus, errorThrown) {
+             //shakeModal(false, "Couldn't complete your request, kindly try again");
+             alert("Couldn't complete your request, kindly try again");
+           }
+
+    });
+}
+
+ $('#gamereserve').on('click',function(){
+        $('#reserveModal').modal();
+        return false;
+    });

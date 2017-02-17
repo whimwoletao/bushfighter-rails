@@ -15,6 +15,15 @@ class LandingsController < ApplicationController
   		render  text: "false"
   	end
   end
+
+  def reserve
+    plusOne = GameReservation.new(reserve_params)
+    if plusOne.save
+      render  text: "true"
+    else
+      render  text: "false"
+    end
+  end
   def contactus
     info = ContactUs.new(contact_params)
     if info.save
@@ -23,11 +32,15 @@ class LandingsController < ApplicationController
       render text: "false"
     end
   end
+
    protected
   def contact_params
     params.permit(:name, :email, :subject, :message)
   end
   def member_params
   	params.permit(:group, :name, :email, :number, :accept)
+  end
+  def reserve_params
+    params.permit(:name, :phone, :type, :package, :date, :time)
   end
 end

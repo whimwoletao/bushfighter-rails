@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'landings/index'
   post 'membership', to: "landings#membership"
   post 'contactus', to: "landings#contactus"
+  post 'reserve', to: "landings#reserve"
 
 
   resources :teams do
