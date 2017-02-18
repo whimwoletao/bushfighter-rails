@@ -11,6 +11,24 @@ jQuery(function($) {'use strict';
 		$('#aboutus').modal();
 		return false;
 	});
+
+	$('#faqb').on('click',function(){
+		$('#faqm').modal();
+		return false;
+	});
+	$('#safetyb').on('click',function(){
+		$('#safetym').modal();
+		return false;
+	});
+	$('#gameb').on('click',function(){
+		$('#gamem').modal();
+		return false;
+	});
+
+	$('#eventb').on('click',function(){
+		$('#eventm').modal();
+		return false;
+	});
 	$('#membershipb').on('click',function(){
 		$('#membership').modal();
 		return false;
