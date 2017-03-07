@@ -159,6 +159,7 @@ ul.nostyle i {
   border-radius: 0;
   margin-bottom: 0;
 }
+
 .navbar.navbar-default .navbar-toggle {
   margin-top: 32px;
 }
@@ -168,9 +169,10 @@ ul.nostyle i {
 }
 @media only screen and (min-width: 768px) {
   #main-menu.navbar-default {
-    background: rgba(255, 255, 255, 0.9);
+     background: url(https://3.bp.blogspot.com/-g8TvGfGCx7Q/WLQM0vdaaGI/AAAAAAAAAc0/z0j7twyGFv4mBbRvyQcJhwuPwl2GTe0wQCLcB/s1600/56fbf99045657.jpg);
+    /*background: rgba(255, 255, 255, 0.9);
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);*/
   }
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 40px;
@@ -322,12 +324,14 @@ ul.nostyle i {
 }
 #features {
   padding: 100px 0;
+  background: url(https://1.bp.blogspot.com/-FKNvry-ZPFo/WLQMTbdH5ZI/AAAAAAAAAcc/RwMeqXUDkQ07VjEWV-2hhziTruelJoY9ACLcB/s1600/32878888.jpg);
 }
 #features .media.service-box:first-child {
   margin-top: 80px;
 }
 #services {
   padding: 100px 0 75px;
+  background: url(https://4.bp.blogspot.com/-G4sv-RRgyMY/WLQMdXtxbCI/AAAAAAAAAck/orlfU-2tz-MP_MxNtKCCHeeti-747jo0ACLcB/s1600/15327200_1371570120_de_aztec0015.jpg);
 }
 .media.service-box {
   margin: 25px 0;
@@ -370,7 +374,8 @@ ul.nostyle i {
 }
 #portfolio {
   padding: 100px 0;
-  background: #f5f5f5;
+ background: url(https://3.bp.blogspot.com/-I8jZxb0nYeE/WLQMkvNmlcI/AAAAAAAAAco/nJnc-vrRIOErfI9RgmK4vFvGCZRYQbzlwCLcB/s1600/515883127985e.jpg);
+  /*background: #f5f5f5;*/
 }
 #portfolio .portfolio-filter {
   list-style: none;
@@ -529,17 +534,18 @@ ul.nostyle i {
 #testimonial small {
   display: block;
   margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, https://2.bp.blogspot.com/-u3IXijOQcMw/WLQMTmAhnuI/AAAAAAAAAcg/_1SmjEhP8UMKt46whiuuS-z03QmpaIE6wCLcB/s1600/17029.jpg0.7);
 }
 #testimonial .btns {
   margin-top: 10px;
 }
 #about {
   padding: 100px 0;
+  background: url(https://3.bp.blogspot.com/-w69ClKfslpI/WLQM8TPoeRI/AAAAAAAAAdA/gkrg2DItiq0oHk3_bq9E6PWD5AqIy_CPgCLcB/s1600/588df700f3c6b.jpg);
 }
 #work-process {
   padding: 100px 0 50px;
-  background: #20222e url(work-process/bg.jpg) no-repeat 0 0;
+  background:  url(https://1.bp.blogspot.com/-OewW3NgErrM/WLQMs303jLI/AAAAAAAAAcs/Ofi7iYy7xBUX44kbvlbLhkf-HV9YLjXuwCLcB/s1600/51634a17a1588.jpg);
   background-size: cover;
   color: #fff;
 }
@@ -577,6 +583,7 @@ ul.nostyle i {
 }
 #meet-team {
   padding: 100px 0;
+  background: url(https://2.bp.blogspot.com/-u3IXijOQcMw/WLQMTmAhnuI/AAAAAAAAAcg/_1SmjEhP8UMKt46whiuuS-z03QmpaIE6wCLcB/s1600/17029.jpg);
 }
 #meet-team .team-member {
   padding: 13px;
@@ -704,6 +711,7 @@ ul.nostyle i {
 }
 #pricing {
   padding: 100px 0 70px;
+  background: url(https://2.bp.blogspot.com/-u3IXijOQcMw/WLQMTmAhnuI/AAAAAAAAAcg/_1SmjEhP8UMKt46whiuuS-z03QmpaIE6wCLcB/s1600/17029.jpg);
 }
 #pricing ul.pricing {
   list-style: none;

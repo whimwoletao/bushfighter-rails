@@ -27,6 +27,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 #needed  for admin dashboard
 gem 'rails_admin'
+#needed for  error tracking
+gem 'rollbar'
+# suggestion from rollbar
+gem 'oj', '~> 2.12.14'
 
 gem 'elasticsearch', '~> 5.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

@@ -5,18 +5,17 @@
     <div class="col-lg-12 col-md-12">
         <div>
 
-        <div class="row sharing-area text-center">
+        <div  class="row sharing-area text-center ">
             <br> <br> <br> <br>
             <% if current_member.present? && current_member.email == 'admin@bushfighterspaintballclub.com' %>
-            <h5>You don't have any  Team yet, create one now</h5>
-
+            <strong><h5 style="color:#FFFFFF">You don't have any  Team yet, create one now</h5></strong>
              <%= link_to new_team_path do %>
                 <button  type="button" class="btn btn-raised btn-twitter">New Team</button>
 
                <br><br> <br>
             <% end %>
             <%else%>
-            <h5>You don't have any  Team yet, contact admin to create your team</h5>
+            <strong><h5 style="color:#FFFFFF" >You don't have any  Team yet, contact admin to create your team</h5></strong>
             <%end%>
         </div>
         </div>
